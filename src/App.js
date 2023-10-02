@@ -18,7 +18,7 @@ function App() {
   return (
     <MainBody>
       <NavigationBar>
-        <h1>Friends Database</h1>
+        <h2>Friends Database</h2>
         <NavigationLinks>
           <Link className={'link-navigation-item'} to={'/'}>Login</Link>
           <Link className={'link-navigation-item'} to={'/friends'}>Friends List</Link>
