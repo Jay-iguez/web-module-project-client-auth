@@ -1,13 +1,23 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
+import Login from './components/Login'
 
 function App() {
+  //<Login />
   return (
-    <div className="App">
-      <h2>Client Auth Project</h2>
-    </div>
-  );
+    <>
+      <nav>
+      <Link to={'/'}>Login</Link>
+      <Link to={'/friends'}>Friends List</Link>
+      <Link to={'/friends/add'}>Add Friend</Link>
+      <Link to={'/logout'}>Log Out</Link>
+      </nav>
+      <Routes>
+        <Route path={'/'} element={<Login />}></Route>
+      </Routes>
+    </>
+  )
 }
 
 export default App;
