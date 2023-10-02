@@ -1,2 +1,31 @@
 import styled from "styled-components";
 
+export const MainBody = styled.div`
+    margin: 0 auto;
+    width: 50%;
+    border: 1px solid black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+`
+
+export const NavigationBar = styled.div`
+    display: flex;
+    justify-content: space-around;
+    border-bottom: .5rem solid black;
+    padding: 1rem;
+`
+
+export const NavigationLinks = styled.nav`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+
+    .link-navigation-item {
+        margin: 0 1rem;
+        padding: 1rem;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+    }
+`
