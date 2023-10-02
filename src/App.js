@@ -3,6 +3,7 @@ import './App.css';
 import { NavigationBar, MainBody, NavigationLinks } from './styled-components/styled';
 import { Route, Routes, Link } from 'react-router-dom';
 import Login from './components/Login'
+import Logout from './components/Logout';
 
 //Protected Imports/Routes
 import AddFriend from './protected/AddFriend';
@@ -25,6 +26,7 @@ function App() {
 
       <Routes>
         <Route path={'/'} element={<Login />}></Route>
+        <Route path={'/logout'} element={<Logout />}></Route>
         <Route element={<ProtectedRoutes />}>
             <Route path={'/friends/add'} element={<AddFriend />}></Route>
             <Route path={'/friends/*'} element={<FriendsList />}></Route>

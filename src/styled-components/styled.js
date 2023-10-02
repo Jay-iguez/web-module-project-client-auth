@@ -36,7 +36,6 @@ export const NavigationLinks = styled.nav`
 
 export const MainComponentBody = styled.div`
     display: flex;
-    border: 1px solid black;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;

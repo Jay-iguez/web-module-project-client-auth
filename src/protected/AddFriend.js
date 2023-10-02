@@ -7,7 +7,7 @@ const initialFriendValues = {
     email: ''
 }
 
-export default function AddFriend(props) {
+export default function AddFriend() {
 
     const [friendValues, setFriendValues] = useState(initialFriendValues)
 
