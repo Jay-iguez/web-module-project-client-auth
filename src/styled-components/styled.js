@@ -67,3 +67,16 @@ export const Form = styled.form`
         padding: .5rem;
     }
 `
+
+export const ListItems = styled.div`
+   display: flex;
+   flex-flow: column nowrap;
+
+   li {
+    list-style: none;
+    margin: .5rem 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+   }
+
+`

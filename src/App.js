@@ -3,7 +3,11 @@ import './App.css';
 import { NavigationBar, MainBody, NavigationLinks } from './styled-components/styled';
 import { Route, Routes, Link } from 'react-router-dom';
 import Login from './components/Login'
+
+//Protected Imports/Routes
 import AddFriend from './protected/AddFriend';
+import ProtectedRoutes from './protected/ProtectedRoutes'
+import FriendsList from './protected/FriendsList';
 
 function App() {
   
@@ -21,7 +25,10 @@ function App() {
 
       <Routes>
         <Route path={'/'} element={<Login />}></Route>
-        <Route path={'/add'} element={<AddFriend />}></Route>
+        <Route element={<ProtectedRoutes />}>
+            <Route path={'/add'} element={<AddFriend />}></Route>
+            <Route path={'/friends'} element={<FriendsList />}></Route>
+        </Route>
       </Routes>
     </MainBody>
   )
