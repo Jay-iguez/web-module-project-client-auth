@@ -1,13 +1,13 @@
 import React from "react";
 import { MainComponentBody, Form } from "../styled-components/styled";
 
-export default function Login(props) {
+export default function AddFriend(props) {
 
     return (
         <MainComponentBody>
-            <h1>LOGIN</h1>
+            <h1>ADD FRIEND</h1>
             <Form>
-                <label> USERNAME
+                <label> FRIEND NAME
                     <input
                         type="text"
                         name='username'
@@ -15,7 +15,7 @@ export default function Login(props) {
                         placeholder=""
                     />
                 </label>
-                <label> PASSWORD
+                <label> FRIEND EMAIL
                     <input
                     type="password"
                     name='password'
