@@ -18,7 +18,7 @@ function App() {
         <NavigationLinks>
           <Link className={'link-navigation-item'} to={'/'}>LOGIN</Link>
           <Link className={'link-navigation-item'} to={'/friends'}>FRIENDS LIST</Link>
-          <Link className={'link-navigation-item'} to={'/add'}>ADD FRIEND</Link>
+          <Link className={'link-navigation-item'} to={'/friends/add'}>ADD FRIEND</Link>
           <Link className={'link-navigation-item'} to={'/logout'}>LOG OUT</Link>
         </NavigationLinks>
       </NavigationBar>
@@ -26,8 +26,8 @@ function App() {
       <Routes>
         <Route path={'/'} element={<Login />}></Route>
         <Route element={<ProtectedRoutes />}>
-            <Route path={'/add'} element={<AddFriend />}></Route>
-            <Route path={'/friends'} element={<FriendsList />}></Route>
+            <Route path={'/friends/add'} element={<AddFriend />}></Route>
+            <Route path={'/friends/*'} element={<FriendsList />}></Route>
         </Route>
       </Routes>
     </MainBody>

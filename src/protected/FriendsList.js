@@ -30,8 +30,8 @@ export default function FriendsList() {
                     !isShown ?
                         <h1 style={{ textAlign: 'center' }}>Loading friends, please wait...</h1>
                         :
-                        friendsList.map(friend => {
-                            return <li>- {friend.name} - {friend.email}</li>
+                        friendsList.map((friend, index)=> {
+                            return <li key={index} >- {friend.name || friend.username} - {friend.email || friend.password}</li>
                         })
                 }
             </ListItems>

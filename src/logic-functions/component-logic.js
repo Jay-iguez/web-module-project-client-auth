@@ -6,6 +6,13 @@ export const loginPostRequest = (loginData) => {
     return axios.post(baseUrl + '/api/login', loginData)
 }
 
+export const addFriendPostRequest = (friendData) => {
+    const tokenAuth = localStorage.getItem('login-token')
+    return axios.create({
+        headers: {authorization: tokenAuth}
+    }).post(baseUrl + '/api/friends', friendData)
+}
+
 export const setToLocalStorage = (key, token) => {
     localStorage.setItem(key, token)
 }
