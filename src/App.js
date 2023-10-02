@@ -3,7 +3,7 @@ import './App.css';
 import { NavigationBar, MainBody, NavigationLinks } from './styled-components/styled';
 import { Route, Routes, Link } from 'react-router-dom';
 import Login from './components/Login'
-import AddFriend from './components/AddFriend';
+import AddFriend from './protected/AddFriend';
 
 function App() {
   

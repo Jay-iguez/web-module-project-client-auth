@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MainComponentBody, Form } from "../styled-components/styled";
-import { loginPostRequest } from "../logic-api-calls/api-calls";
+import { loginPostRequest, setToLocalStorage } from "../logic-functions/component-logic";
 
 const initialLoginValues = {
     username: '',
@@ -10,19 +10,31 @@ const initialLoginValues = {
 
 export default function Login(props) {
     const [loginValues, setLoginValues] = useState(initialLoginValues)
+    const navigate = useNavigate()
 
     const onChange = e => {
-        const {name, value} = e.target
-        setLoginValues({...loginValues, [name] : value})
+        const { name, value } = e.target
+        setLoginValues({ ...loginValues, [name]: value })
     }
 
     const onSubmit = e => {
         e.preventDefault()
+
         const loginToPost = {
             username: loginValues.username,
             password: loginValues.password
         }
+
         loginPostRequest(loginToPost)
+        .then(res => {
+            console.log(res)
+            setToLocalStorage('login-token', res.data.token)
+            navigate('/friends')
+        })
+        .catch(err => {
+            console.error(err)
+        })
+        
         setLoginValues(initialLoginValues)
     }
 
@@ -41,11 +53,11 @@ export default function Login(props) {
                 </label>
                 <label> PASSWORD
                     <input
-                    type="password"
-                    name='password'
-                    value={loginValues.password}
-                    onChange={onChange}
-                    placeholder=""
+                        type="password"
+                        name='password'
+                        value={loginValues.password}
+                        onChange={onChange}
+                        placeholder=""
                     />
                 </label>
                 <button onClick={onSubmit} >SUBMIT</button>
